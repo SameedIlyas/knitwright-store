@@ -167,6 +167,7 @@
   grid-template-columns: 0.82fr 1fr;
   gap: 40px;
   min-height: min(880px, 100vh);
+  min-height: min(880px, 100svh);
   padding: 110px var(--gutter) 60px;
   background: var(--surface);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
@@ -594,6 +595,29 @@
   0% { width: 0; }
   50%, 85% { width: 26ch; }
   100% { width: 0; }
+}
+
+/* The typed line is a fixed 26ch, so shrink it to fit narrow cards instead of clipping */
+.coupon__field {
+  container-type: inline-size;
+}
+
+@container (max-width: 280px) {
+  .coupon__icon {
+    display: none;
+  }
+
+  .coupon__typed {
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+}
+
+@container (max-width: 205px) {
+  .coupon__typed {
+    font-size: 10.5px;
+    letter-spacing: 0;
+  }
 }
 
 .cursor--coupon {
@@ -1742,6 +1766,8 @@
 
 .newsletter input {
   flex: 1;
+  /* zero intrinsic width, so the field never props the footer wider than a 320px screen */
+  width: 0;
   min-width: 0;
   border: 0;
   background: transparent;
@@ -1889,6 +1915,14 @@
     right: 8%;
   }
 
+  .phone {
+    overflow: hidden;
+  }
+
+  .phone__bars {
+    height: 90px;
+  }
+
   .hero__chip {
     left: 0;
     bottom: 4%;
@@ -1912,7 +1946,6 @@
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
@@ -1969,10 +2002,6 @@
   }
 
 
-  .footer {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .footer__base {
     flex-direction: column;
   }
@@ -1997,6 +2026,148 @@
 
   .header__cart {
     padding: 0 6px;
+  }
+
+  .header__inner {
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bento__card {
+    padding: 22px;
+  }
+
+  /* Phone mock: tighten so the dashboard fits inside the shorter art */
+  .phone {
+    padding: 14px 14px 0;
+    border-radius: 34px 34px 0 0;
+  }
+
+  .phone__island {
+    width: 64px;
+    height: 22px;
+  }
+
+  .phone__store {
+    margin: 14px 0 10px;
+    font-size: 9.5px;
+    letter-spacing: 0.02em;
+  }
+
+  .phone__hi {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .phone__card {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .phone__row {
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 13px;
+  }
+
+  .phone__card strong {
+    font-size: 24px;
+  }
+
+  .phone__bars {
+    gap: 6px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card__body > div {
+    min-width: 0;
+  }
+
+  .card__body h3 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Narrow phones: title gets the full card width, price and add button share the row below */
+@media (max-width: 420px) {
+  .card__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 6px;
+    padding: 12px 4px 0;
+  }
+
+  .card__body > div {
+    display: contents;
+  }
+
+  .card__body h3 {
+    grid-column: 1 / -1;
+  }
+
+  .card__add {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .card__swatches {
+    padding: 8px 4px 0;
+  }
+}
+
+/* Bigger hit areas for the tiny colour dots on touch screens */
+@media (pointer: coarse) {
+  .card__swatches {
+    gap: 10px;
+  }
+
+  .card__swatches button {
+    position: relative;
+  }
+
+  .card__swatches button::after {
+    content: '';
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+  }
+
+  .footer__col {
+    gap: 4px;
+  }
+
+  .footer__col a {
+    padding: 6px 0;
+  }
+}
+
+/* Short viewports (phones in landscape) */
+@media (max-height: 560px) {
+  .mobile-menu {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-top: 84px;
+  }
+
+  .mobile-menu a {
+    font-size: 30px;
+  }
+
+  .mobile-menu__close {
+    top: 16px;
   }
 }
 

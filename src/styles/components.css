@@ -676,7 +676,9 @@
   pointer-events: auto;
   width: min(1000px, 100%);
   max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   overflow-y: auto;
+  overscroll-behavior: contain;
   border-radius: 32px;
   background: var(--surface);
   box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.5);
@@ -782,6 +784,47 @@
 
   .qv__buy .qty {
     align-self: flex-start;
+  }
+}
+
+/* Short viewports (phones in landscape): scroll the whole drawer, keep the quick view side by side */
+@media (max-height: 560px) {
+  .drawer {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .drawer__body {
+    flex: none;
+    overflow: visible;
+  }
+
+  .drawer__head,
+  .drawer__foot {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+@media (max-height: 560px) and (min-width: 600px) {
+  .qv {
+    grid-template-columns: 0.9fr 1fr;
+    align-items: start;
+  }
+
+  .qv__art {
+    position: sticky;
+    top: 12px;
+    min-height: 0;
+    height: calc(100dvh - 56px);
+  }
+
+  .qv__art .qv__garment {
+    width: min(34vw, 62dvh);
+  }
+
+  .qv__info {
+    padding: 24px 24px 24px 8px;
   }
 }
 
