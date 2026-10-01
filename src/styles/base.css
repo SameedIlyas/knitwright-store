@@ -1,0 +1,243 @@
+/* Knitwright brand tokens — sourced from knitwright.com */
+:root {
+  --ink: #0f1012;
+  --ink-2: #2a2c31;
+  --tile: #17181b;
+  --tile-2: #222429;
+  --muted: #62656d;
+  --faint: #a3a6ad;
+  --canvas: #f4f4f5;
+  --shell: #ededee;
+  --chalk: #e9eaee;
+  --surface: #ffffff;
+  --cobalt: #2b46f0;
+  --cobalt-bright: #3a55ff;
+  --cobalt-soft: #8296ff;
+  --cobalt-wash: #eef1ff;
+  --cobalt-deep: #1c2a8f;
+  --ok: #0f7b59;
+  --ok-wash: #e7f4ee;
+  --hairline: #0f101217;
+  --thread: linear-gradient(95deg, #b9c4ff 0%, #fff1c2 28%, #ffd3e6 52%, #c7f0e4 74%, #9fb0ff 100%);
+
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --radius-xl: 48px;
+  --radius-lg: 32px;
+  --radius-md: 22px;
+  --radius-sm: 14px;
+  --gutter: clamp(16px, 2.8vw, 40px);
+  --max: 1360px;
+  --ease: cubic-bezier(0.25, 0.01, 0, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+h2 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+}
+
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+::selection {
+  background: var(--cobalt);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+main {
+  background: var(--surface);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  margin: 0 20px;
+  position: relative;
+  overflow-x: clip;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lede {
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  color: var(--muted);
+  max-width: 34ch;
+  line-height: 1.5;
+}
+
+.lede--dark {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  color: var(--cobalt);
+}
+
+/* Blob masks (clip paths defined in App) */
+.blob > .fill:first-child {
+  clip-path: url(#blob-hero);
+}
+
+.blob-left > .fill:first-child {
+  clip-path: url(#blob-left);
+}
+
+.blob-right > .fill:first-child {
+  clip-path: url(#blob-right);
+}
+
+.blob-sm {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__group {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    margin: 0 8px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+}
+
+.crash {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 18px;
+  min-height: 100vh;
+  padding: 24px;
+  text-align: center;
+}
+
+.crash p {
+  color: var(--muted);
+}

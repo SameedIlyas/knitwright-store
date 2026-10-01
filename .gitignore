@@ -1,0 +1,8 @@
+node_modules
+dist
+*.local
+
+# local secrets
+.env
+.env.*
+!.env.example

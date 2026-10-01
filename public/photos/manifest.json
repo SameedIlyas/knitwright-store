@@ -1,0 +1,152 @@
+[
+  {
+    "id": "hockey-front",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "hockey-back",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "baseball-front",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "baseball-pants",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "tee",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "hoodie",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "track-jacket",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "winter-jacket",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "pant-shell",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "joggers",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "shorts",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "socks",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "gloves",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "cap",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "toque",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "duffel",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "backpack",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "bottle",
+    "kind": "cutout",
+    "size": "square"
+  },
+  {
+    "id": "scene-hero",
+    "kind": "scene",
+    "size": "portrait"
+  },
+  {
+    "id": "scene-sublimation",
+    "kind": "scene",
+    "size": "portrait"
+  },
+  {
+    "id": "scene-shipping",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-crest",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-fabric",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-names",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-numbers",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-factory",
+    "kind": "scene",
+    "size": "landscape"
+  },
+  {
+    "id": "scene-dugout",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-locker",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-sewing",
+    "kind": "scene",
+    "size": "square"
+  },
+  {
+    "id": "scene-team",
+    "kind": "scene",
+    "size": "landscape"
+  }
+]
